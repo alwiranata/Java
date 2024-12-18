@@ -15,10 +15,7 @@ class TV extends utama{
         System.out.println("Brand1 " +  brand);
         barang();
         System.out.println("Brand2 " + modelName);
-    }
-    
-
-    
+    }   
 }
 
 public class inheritance {
