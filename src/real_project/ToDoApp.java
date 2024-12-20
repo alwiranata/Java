@@ -25,10 +25,10 @@ public class ToDoApp {
            scanner.nextLine();
           
            switch(choice){
-               case 1 -> System.out.println("Tambah Tugas");
-               case 2 -> System.out.println("lihat Tugas");
-               case 3 -> System.out.println("Hapus Tugas");
-               case 4 -> System.out.println("Tandai tugas selesai");
+               case 1 -> addTask(scanner);
+               case 2 -> viewTask();
+               case 3 -> deleteTask(scanner);
+               case 4 -> markTaskComplete(scanner);
                case 5 -> System.out.println("Terima Kasih");
                default -> System.out.println("Piihan tidak tersedia");
            }
@@ -37,5 +37,66 @@ public class ToDoApp {
        
        scanner.close();
     }
+    //add task
+    public static void addTask(Scanner scanner){
+        
+        System.out.print("Masukkan Deskripsi Tugas :");
+        String task = scanner.nextLine();
+        
+        tasks.add(task);
+        
+        isCompleted.add(false);
+        
+        System.out.println("Tugas berhasil ditambhkan");
+    }
     
+    //view taks
+    public static void viewTask(){
+        
+        if(tasks.isEmpty()){
+            System.out.println("Tidak ada tugas dalam daftar.");
+            return;
+        }
+        
+        System.out.println("\nDaftar Tugas");
+        for(int i = 0; i <tasks.size() ; i++){
+            String status = isCompleted.get(i) ? "Selesai" : "Belum Selesai";
+            System.out.println((i + 1 ) +". " + tasks.get(i)+ "[" + status + "]");
+        }
+    }
+    
+    //delete task
+    public static void deleteTask(Scanner scanner){
+        
+        viewTask();
+        
+        if(tasks.isEmpty()) return;
+        
+        System.out.print("Masukkan nomor tugas yang ingin di hapus :");
+        int index = scanner.nextInt() - 1;
+        
+        if (index >= 0 && index < tasks.size() ){
+            tasks.remove(index);
+            isCompleted.remove(index);
+            System.out.println("Tugas Berhasil Dihapus");
+        }else{
+            System.out.println("Nomor tugas tidak valid");
+        }    
+    }
+    
+    //mark Task
+    public static void markTaskComplete (Scanner scanner){
+        viewTask();
+        if(tasks.isEmpty())return;
+        
+        System.out.print("Masukkan nomor tugas yang ingin datandai selesai :");
+        int index = scanner.nextInt() -1;
+        
+        if(index >= 0 && index< tasks.size()){
+            isCompleted.set(index, true);
+            System.out.println("Tugas berhasil ditandai selesai! ");
+        }else{
+            System.out.println("Nomor tugas tidak valid");
+        }
+    }
 }
