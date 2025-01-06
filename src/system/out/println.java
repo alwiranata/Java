@@ -5,6 +5,6 @@ package system.out;
 public class println {
     public static void main(String[] args){
         double nilai = 100;
-        System.out.print(nilai);
+        System.out.print("Cetak Menggunakan printf :" + nilai);
     }
 }
