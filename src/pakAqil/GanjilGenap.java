@@ -4,9 +4,9 @@ package pakAqil;
 import javax.swing.JOptionPane;
 public class GanjilGenap {
     public static void main(String[] args){
-        
-        
-        
+        int nilai = 2;
+        int value = 2;
+        System.out.print( nilai == value);
         try{
            //pilih opsi
           String add = JOptionPane.showInputDialog(
@@ -23,19 +23,23 @@ public class GanjilGenap {
                //mengubah input menjadi angka
                int angka =  Integer.parseInt(input);
             
-               if(angka %2 == 0){
+               if(angka % 2 == 0){
                    JOptionPane.showMessageDialog(null, angka + " Adalah Bilangan genap");
                }
                
                if(angka % 2 == 1){
                   JOptionPane. showMessageDialog(null, angka + " Adalah Bilagan ganjil") ;
                }
+               
                return;
            }
             if(opsi == 2 ){
                 //input banyak angka
+                
+                //string = "10"
                 String input = JOptionPane.showInputDialog("Masukkan Banyak angka");
                 //mengubah input menjadi ankga
+                //10
                 int angka = Integer.parseInt(input);
                 //for 
                 for(int i = 1; i<= angka; i++){
