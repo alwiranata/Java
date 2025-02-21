@@ -3,7 +3,7 @@ package pakAqil;
 //library
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
-
+    
 //class user
 class User{
     //2 variabel instance
@@ -14,12 +14,12 @@ class User{
     public User(String email , String password){
         this.email = email;
         this.password= password;
-    }
-}
+                }
+            }
 
 public class RegisterAndLogin {
     static ArrayList<User> users = new ArrayList<>();
-     
+          
     public static void main (String[] args) {
      
         boolean running  = true;
@@ -56,16 +56,16 @@ public class RegisterAndLogin {
             default :
                 break;
            };
-        }
-    }
-    
+     }
+}
+
     public static void registrasi () {
         String email = JOptionPane.showInputDialog("Masukkan Email :");
         String password = JOptionPane.showInputDialog("Masukkan Password :");
         users.add(new User(email, password));
         JOptionPane.showMessageDialog(null,"Registrasi Berhasil");
-    }
-    
+      }
+     
     public static void login (){
         String email  = JOptionPane.showInputDialog(null,"Masukkan Email :");
         String password = JOptionPane.showInputDialog(null, "Masukkan password :");
@@ -77,19 +77,19 @@ public class RegisterAndLogin {
                 break;
             }else{
                 JOptionPane.showMessageDialog(null, "Login gagal");
-            }
-        }
+          }
     }
-    
+    }
+
     public static void  HomePage(){
         boolean run  = true;
-        
+     
         while (run){
-    
+     
           String[] options = {
              "Kembali",
           };
-          
+     
           int choice =  JOptionPane.showOptionDialog(
                   null,
                   "Home Page",
@@ -100,15 +100,15 @@ public class RegisterAndLogin {
                   options,
                   options[0]
           );
-          
+     
           switch(choice){
             case 0 :
                 run = false;
             default :
                 break;
            };
-        }
-    }
+ }
+ }
     
     
 }
