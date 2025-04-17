@@ -25,6 +25,33 @@ public class loopingtugas {
             
             System.out.println();
         }
-       
+      
+        var kehadiran =  new boolean[]{
+             true, false, true, true, true,
+            true, true, true, false, true,
+            true, true, true, true, true,
+            false, true, true, true, false,
+            true, true, false, true, true,
+            true, true, true, false, true
+        };
+        
+        var totalKehadiran = 0;
+        var jumlahHari = kehadiran.length;
+        
+        for(var hadir : kehadiran) {
+            if(hadir){
+                totalKehadiran++;
+            }
+        }
+        
+        var persentaseKehadiran =  (totalKehadiran * 100.0) /jumlahHari;
+        
+        System.out.println("Jumlah Kehadiran :" + totalKehadiran + " Dari " + jumlahHari + "hari") ;
+        System.out.println("persentase Kehadiran :" + persentaseKehadiran  + "%") ;
+        if(persentaseKehadiran >= 75){
+            System.out.println("lulus");
+        }else{
+            System.out.println("Gagal");
+        }
     }
 }
