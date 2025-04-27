@@ -52,5 +52,15 @@ public class uts {
         }else{
             System.out.println("Gagal");
         }
+        
+        //4.Input perulangan dari user 
+        var inputUser = new Scanner(System.in);
+        
+        System.out.print("Masukkan jumlah perulangan : ");
+        var handleInputPerulangan = inputUser.nextInt();
+        
+        for(var i = 1 ;  i <= handleInputPerulangan ; i++){
+            System.out.println("Perulangan ke : " + i + "\t");
+        }
     }
 }
